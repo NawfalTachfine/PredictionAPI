@@ -11,10 +11,11 @@ import sys
 import numpy as np
 import pandas as pd
 import sklearn
+import pickle as pkl
+
 import json
 import requests
 import logging as lg
-import pickle as pkl
 from datetime import datetime as dt
 from pytz import timezone
 
@@ -47,7 +48,7 @@ model = pkl.load(open("/rf.pkl",'r'))
 @app.route('/api/v1.0/aballone', methods=['POST'])
 def index():
 
-    innput = request.get_json(silent=True)
+    raw_query = request.get_json(silent=True)
 
 
     output = {"key":"value"}
