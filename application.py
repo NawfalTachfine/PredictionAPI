@@ -38,14 +38,19 @@ lg.basicConfig(filename = log_file_name,
 # ******************************************************************************
 
 # Init
-
 app = Flask(__name__)
+model = pkl.load(open("/rf.pkl",'r'))
+
+# ******************************************************************************
 
 # Core
 @app.route('/api/v1.0/aballone', methods=['POST'])
 def index():
 
-    out = {"key":"value"}
+    innput = request.get_json(silent=True)
+
+
+    output = {"key":"value"}
 
     return jsonify(out)
 

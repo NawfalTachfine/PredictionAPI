@@ -1,0 +1,11 @@
+numpy==1.11.2
+scipy==0.18.0
+pandas==0.20.1
+scikit-learn==0.18.1
+Jinja2==2.9
+Flask==0.12.1
+flask-httpauth==3.2.1
+Werkzeug==0.12
+Unidecode==0.4.20
+requests==2.17.3
+six==1.10.0
