@@ -48,12 +48,12 @@ model = pkl.load(open("/rf.pkl",'r'))
 @app.route('/api/v1.0/aballone', methods=['POST'])
 def index():
 
-    raw_query = request.get_json(silent=True)
+    query = request.get_json(silent=True)
 
 
     output = {"key":"value"}
 
-    return jsonify(out)
+    return jsonify(output)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
