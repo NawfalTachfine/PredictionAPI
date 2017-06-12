@@ -57,7 +57,6 @@ lg.basicConfig(filename = log_file_name,
                datefmt = '%Y-%m-%d %H:%M:%S'
                )
 
-sys.path.append("./models")
 # ******************************************************************************
 
 # Init
@@ -81,16 +80,24 @@ BOUNDARIES = {
 @app.route('/api/v1.0/aballone', methods=['POST'])
 def index():
 
+    # Fetching inputs
     query = request.get_json(silent=True, force=True)['inputs']
     input_df = pd.DataFrame(query)
 
+    # Preparing features
     X_tmp = dummy_encode(input_df, DUMMIES)
     X = minmax_scale(X_tmp, BOUNDARIES)
 
+    # Computing predictions
     y_pred = model.predict(X)
     y_prob = model.predict_proba(X)
 
+    # Building output
     output = [{"label":int(y), "prob":round(float(p[0]),3)} for (y,p) in zip(y_pred, y_prob)]
+
+    # Logging predictions
+    for (i,o) in zip(query, output):
+        lg.info('IN | {} || OUT | {}'.format(i, o))
 
     return jsonify({'outputs': output})
 
