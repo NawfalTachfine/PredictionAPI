@@ -5,7 +5,7 @@ MAINTAINER Nawfal Tachfine
 # Package dependencies
 RUN apt-get update &&\
     apt-get install -y python3-dev &&\
-    apt-get install -y python3-pip &&\
+    apt-get install -y python3-pip
 
 # Python libraries
 ADD requirements.txt /src/requirements.txt
