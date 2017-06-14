@@ -36,7 +36,7 @@ docker build -t prediction-api .
 docker run -d -p 5000:5000 prediction-api
 ```
 
-### Testing the application
+### Testing the application
 Once it is running, the API can be queried using HTTP POST requests.
 I recommend using [postman](https://www.getpostman.com/) for testing.
 
