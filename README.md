@@ -37,8 +37,7 @@ docker run -d -p 5000:5000 prediction-api
 ```
 
 ### Testing the application
-Once it is running, the API can be queried using HTTP POST requests.
-I recommend using [postman](https://www.getpostman.com/) for testing.
+Once it is running, the API can be queried using HTTP POST requests. This can be done from the CLI using `curl` or through a GUI REST client like [Insomnia](https://insomnia.rest/) or [Postman](https://www.getpostman.com/).
 
 URL: `http://0.0.0.0:5000/api/v1.0/aballone`
 
