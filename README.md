@@ -1,7 +1,7 @@
 # PredictionAPI
 This is a tutorial on serving predictions from a machine learning model through a REST API.
 
-A version of this tutorial was [presented](http://slides.com/nawfaltachfine/prediction-api-pyparis-13062017/fullscreen) in the [PyParis](http://pyparis.org/talks.html#6629bc50a989d669b4b056d77b55c978) conference on 13/06/2017.
+A version of this tutorial was [presented](http://slides.com/nawfaltachfine/prediction-api-pyparis-13062017/fullscreen) in the [PyParis](http://2017.pyparis.org/talks.html#6629bc50a989d669b4b056d77b55c978) conference on 13/06/2017.
 
 A complete written version is currently in the making.
 
