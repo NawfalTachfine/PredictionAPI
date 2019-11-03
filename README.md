@@ -33,7 +33,7 @@ python3 -m flask run
 ```bash
 cd PredictionAPI
 docker build -t prediction-api .
-docker run -d -p 5000:5000 prediction-api
+docker run -d --rm -p 5000:5000 prediction-api
 ```
 
 ### Testing the application
