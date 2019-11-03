@@ -1,6 +1,8 @@
 # Base
 FROM ubuntu:latest
 MAINTAINER Nawfal Tachfine
+ENV LC_ALL=C.UTF-8
+ENV LANG=C.UTF-8
 
 # Package dependencies
 RUN apt-get update &&\
@@ -8,15 +10,17 @@ RUN apt-get update &&\
     apt-get install -y python3-pip
 
 # Python libraries
-ADD requirements.txt /src/requirements.txt
+COPY requirements.txt /src/requirements.txt
 RUN pip3 install -r /src/requirements.txt
+RUN mkdir /src/logs
 
 # Source code
-ADD . /src
+COPY . /src
 WORKDIR /src
 
 # Network interfaces
 EXPOSE 5000
 
 # Application
-CMD ["python3", "application.py"]
+ENV FLASK_APP application.py
+CMD ["flask", "run", "--host", "0.0.0.0"]
